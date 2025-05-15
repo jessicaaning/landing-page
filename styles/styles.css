@@ -1,8 +1,8 @@
 nav {
     background-color: rgb(245, 182, 145);
-     display: flex; 
-     flex-direction: row; 
-     justify-content: space-evenly;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
     align-items: center;
     height: 90px;
     left: 0;
@@ -17,22 +17,31 @@ nav {
 
 .logo a {
     text-decoration: none;
+    color: white;
+    font-style: italic;
 }
 
 
 .items {
-    display: flex; 
+    display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    color: white;
+    color: blueviolet;
     font-weight: bold;
     font-size: 20px;
-    width: 50%;
+    width: 60%;
     /* text-decoration: none; */
 }
 
 .items a {
     text-decoration: none;
+    color: white;
+    cursor: pointer;
+
+}
+
+.items a:hover {
+    color: blueviolet;
 }
 
 
@@ -46,23 +55,155 @@ nav {
     align-items: center;
 }
 
-h1 {
-    font-size: 50px;
+/* @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap'); */
+
+.hero-content h1 {
+    font-size: 70px;
     color: white;
-    
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: medium;
+}
+
+.sales {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* position: relative; */
+    display: flex;
+    padding-top: 0%;
 }
 
 .bio {
     font-size: 30px;
     color: white;
     width: 60%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* position: relative; */
     display: flex;
+    padding-top: 0%;
+    display: flex;
+    padding-bottom: 0%;
+    border: none;
+    
+    /* text-align: center; */
+
+    /* I had trouble with the spacing and positioning of the text in class="bio" and the gap between class="bio" and class="sales". I fixed it by adjusting the margin, padding, and box-sizing. */
 }
 
 .hero-content {
-    padding-right: 10%;
+    /* padding-right: 50%; */
+    padding-left: 50%;
+
+    /* padding-right was not needed in shifting the .hero-content to the left, only padding-left was needed*/
 }
 
-.m {
-    
+.sec2-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 20px;
 }
+
+.sec2 h2 {
+    margin-left: 11%;
+    margin-top: 100px;
+}
+
+
+.hero button {
+    background-color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 900;
+    font-size: 10pt;
+    padding: 20px;
+    border-radius: 25px;
+    display: flex;
+}
+
+.sec3-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.image-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.sec3 h2 {
+    margin-left: 11%;
+    margin-top: 100px;
+}
+
+
+.site-footer {
+  background-color: rgb(245, 182, 145);
+  padding: 40px 60px;
+  font-family: 'times new romans';
+  font-size: 15pt;
+  color: #333;
+  border-top: 1px solid #ccc;
+  margin-top: 10%;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 250px;
+  margin: 20px;
+}
+
+.footer-column h4 {
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #000;
+  margin-bottom: 0px;
+}
+
+.footer-column img {
+  width: 50px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.quick-links {
+  display: flex;
+  gap: 40px;
+}
+
+.quick-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.quick-links li {
+  margin-bottom: 10px;
+}
+
+.quick-links a {
+  text-decoration: none;
+  color: #555;
+  font-size: 15pt;
+}
+
+.quick-links a:hover {
+  color: #e91e63;
+}
+
+.footer-column .icon {
+  margin-right: 8px;
+  color: #e91e63;
+}
+
