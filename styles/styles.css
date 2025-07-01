@@ -1,3 +1,9 @@
+/* Base styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif; /* A more common fallback font */
+}
+
 nav {
     background-color: rgb(245, 182, 145);
     display: flex;
@@ -7,12 +13,12 @@ nav {
     height: 90px;
     left: 0;
     right: 0;
-
+    padding: 0 20px;
+    flex-wrap: wrap; /* Allow nav items to wrap */
 }
 
 .logo {
     font-size: 20pt;
-    /* text-decoration: none; */
 }
 
 .logo a {
@@ -21,201 +27,336 @@ nav {
     font-style: italic;
 }
 
-
 .items {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    color: blueviolet;
+    color: peachpuff;
     font-weight: bold;
     font-size: 20px;
     width: 60%;
-    /* text-decoration: none; */
+    flex-wrap: wrap; /* Allow nav links to wrap */
 }
 
 .items a {
     text-decoration: none;
     color: white;
     cursor: pointer;
-
+    padding: 5px 10px; /* Add padding to make links easier to tap */
+    white-space: nowrap; /* Prevent individual links from breaking */
 }
 
 .items a:hover {
-    color: blueviolet;
+    color: peachpuff;
 }
-
 
 .hero {
     background-image: url(../img/jacketfashion-concept.jpg);
     height: 100vh;
-    background-size: cover, contain;
+    background-size: cover;
+    background-position: center;
     display: flex;
-    flex-direction: row;
-    justify-content: end;
-    align-items: center;
-}
-
-/* @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap'); */
-
-.hero-content h1 {
-    font-size: 70px;
-    color: white;
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: medium;
-}
-
-.sales {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    /* position: relative; */
-    display: flex;
-    padding-top: 0%;
-    
-}
-
-.bio {
-    font-size: 20px;
-    color: white;
-    width: 60%;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    /* position: relative; */
-    display: flex;
-    padding-top: 0%;
-    display: flex;
-    padding-bottom: 0%;
-    border: none;
-    
-
-
-    /* I had trouble with the spacing and positioning of the text in class="bio" and thep gap between class="bio" and class="sales". I fixed it by adjusting the margin, padding, and box-sizing. */
+    /* Use flexbox to position content dynamically */
+    justify-content: flex-end; /* Push content to the right */
+    align-items: center; /* Vertically center content */
+    text-align: right; /* Default text alignment for content */
+    padding-right: 5%; /* Padding for the content block */
+    box-sizing: border-box; /* Include padding in element's total width and height */
 }
 
 .hero-content {
-    /* padding-right: 50%; */
-    /* background-color: yellow; */
-
-    padding-left: 50%;
+    /* No fixed padding-left here, flexbox will handle positioning */
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    /* padding-right was not needed in shifting the .hero-content to the left, only padding-left was needed*/
+    align-items: flex-end; /* Align items to the right within hero-content */
+    max-width: 50%; /* Limit the width of the content block */
+    color: white; /* Set text color for hero content */
 }
 
-.hero-content p, h1{
-    margin-left: 120px;
+.hero-content p.bio {
+    font-size: 1.5vw; /* Responsive font size based on viewport width */
+    margin-bottom: 10px; /* Small gap between bio and sales heading */
+    line-height: 1.2;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* Add text shadow for readability */
+    max-width: 100%; /* Ensure bio doesn't overflow */
 }
 
-.hero-content button{
-    margin-left: 220px;
+.hero-content h1.sales {
+    font-size: 5vw; /* Very responsive font size based on viewport width */
+    margin-top: 0; /* Remove top margin */
+    margin-bottom: 20px; /* Gap between sales heading and button */
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: medium;
+    line-height: 1;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7); /* Add text shadow for readability */
+    white-space: nowrap; /* Prevent "Arrival Sales" from breaking if possible */
 }
 
-.sec2-content {
+.hero-content button {
+    background-color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 900;
+    font-size: 1.2vw; /* Responsive button font size */
+    padding: 1vw 2vw; /* Responsive button padding */
+    border-radius: 0px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+.hero-content button:hover {
+    background-color: peachpuff;
+    color: white;
+}
+
+/* Common Section Styles */
+.sec2 h2, .sec3 h2 {
+    margin-top: 100px;
+    text-align: center; /* Center these headings */
+    margin-left: 0; /* Override previous fixed margin */
+    margin-right: 0; /* Ensure no unwanted margin */
+    padding: 0 20px; /* Add some horizontal padding */
+    font-size: 2.5em; /* Use em for relative sizing based on parent font size */
+}
+
+.sec2-content, .sec3-content {
     display: flex;
     flex-direction: row;
     justify-content: center;
     gap: 40px;
     margin-top: 20px;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    padding: 0 20px; /* Add padding to the sides */
 }
 
-.sec2 h2 {
-    margin-left: 11%;
-    margin-top: 100px;
+.sec2-content div, .sec3-content div {
+    text-align: center;
+    flex-basis: 300px; /* Give items a base width, allowing them to shrink/grow */
+    flex-grow: 1; /* Allow items to grow to fill space */
+    max-width: 405px; /* Maintain original max-width for images */
 }
 
-
-.hero button {
-    background-color: white;
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: 900;
-    font-size: 10pt;
-    padding: 10px;
-    border-radius: 0px;
-    display: flex;
+.sec2-content img, .sec3-content img {
+    max-width: 100%; /* Make images responsive */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove extra space below images */
+    object-fit: cover; /* Ensures images cover their area without distortion */
+    aspect-ratio: 405 / 270; /* Helps maintain aspect ratio across different widths */
 }
 
-.sec3-content {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 40px;
-    margin-top: 50px;
-}
-
+/* Image Container for Popular Products (CSS Grid) */
 .image-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid for products */
     gap: 20px;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+    max-width: 1200px; /* Limit overall grid width for better aesthetics on very wide screens */
+    margin: 0 auto; /* Center the grid */
 }
-
-.sec3 h2 {
-    margin-left: 11%;
-    margin-top: 100px;
-}
-
 
 .site-footer {
-  background-color: rgb(245, 182, 145);
-  padding: 40px 60px;
-  font-family: 'times new romans';
-  font-size: 15pt;
-  color: #333;
-  border-top: 1px solid #ccc;
-  margin-top: 10%;
+    background-color: rgb(245, 182, 145);
+    padding: 40px 60px;
+    font-family: 'times new romans';
+    font-size: 15pt;
+    color: #333;
+    border-top: 1px solid #ccc;
+    margin-top: 10%;
 }
 
 .footer-container {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px; /* Limit footer width for better aesthetics */
+    margin: 0 auto; /* Center the footer content */
 }
 
 .footer-column {
-  flex: 1;
-  min-width: 250px;
-  margin: 20px;
+    flex: 1;
+    min-width: 200px; /* Slightly reduced min-width for columns */
+    margin: 20px;
+    text-align: center;
 }
 
 .footer-column h4 {
-  font-size: 12px;
-  letter-spacing: 1px;
-  color: #000;
-  margin-bottom: 0px;
-}
-
-.footer-column img {
-  width: 50px;
-  height: auto;
-  margin-bottom: 10px;
+    font-size: 1.1em; /* Relative font size */
+    letter-spacing: 1px;
+    color: #000;
+    margin-bottom: 10px;
 }
 
 .quick-links {
-  display: flex;
-  gap: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .quick-links ul {
-  list-style: none;
-  padding: 0;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px; /* Gap between list items */
 }
 
 .quick-links li {
-  margin-bottom: 10px;
+    margin-bottom: 0; /* Remove specific li margin as gap handles it */
 }
 
 .quick-links a {
-  text-decoration: none;
-  color: #555;
-  font-size: 15pt;
+    text-decoration: none;
+    color: #555;
+    font-size: 1em; /* Relative font size */
+    padding: 5px;
 }
 
 .quick-links a:hover {
-  color: #e91e63;
+    color: blueviolet;
 }
 
 .footer-column .icon {
-  margin-right: 8px;
-  color: #e91e63;
+    margin-right: 8px;
+    color: blueviolet;
 }
 
+/* --- Media Queries --- */
+
+/* For screens smaller than 1024px (laptops, large tablets) */
+@media (max-width: 1024px) {
+    .hero-content h1.sales {
+        font-size: 6vw; /* Scale down heading more */
+    }
+    .hero-content p.bio {
+        font-size: 2vw; /* Scale down bio more */
+    }
+    .hero-content button {
+        font-size: 1.5vw;
+        padding: 1.2vw 2.5vw;
+    }
+}
+
+
+/* For screens smaller than 768px (tablets and large phones) */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column; /* Stack nav items vertically */
+        height: auto;
+        padding: 15px 0;
+    }
+
+    .logo {
+        margin-bottom: 15px;
+    }
+
+    .items {
+        width: 90%;
+        flex-direction: column; /* Stack nav links vertically */
+        align-items: center; /* Center stacked links */
+    }
+
+    .items a {
+        margin: 5px 0; /* Add vertical spacing between links */
+    }
+
+    .hero {
+        padding-right: 0; /* Remove right padding to center content */
+        justify-content: center; /* Center content horizontally */
+        text-align: center; /* Center text within hero-content */
+    }
+
+    .hero-content {
+        max-width: 80%; /* Allow content to take more width */
+        align-items: center; /* Center items for smaller screens */
+    }
+
+    .hero-content h1.sales {
+        font-size: 8vw; /* Adjust font size for smaller screens */
+        white-space: normal; /* Allow "Arrival Sales" to wrap */
+    }
+
+    .hero-content p.bio {
+        font-size: 3vw; /* Adjust font size */
+    }
+
+    .hero-content button {
+        font-size: 2vw;
+        padding: 2vw 4vw;
+    }
+
+    .sec2 h2, .sec3 h2 {
+        margin-top: 50px;
+        font-size: 2em;
+    }
+
+    .sec2-content, .sec3-content {
+        flex-direction: column; /* Stack collection items vertically */
+        align-items: center; /* Center stacked items */
+        gap: 20px;
+    }
+
+    .sec2-content div, .sec3-content div {
+        flex-basis: auto; /* Remove base width when stacking */
+        max-width: 90%; /* Allow items to take more width */
+    }
+
+    .image-container {
+        grid-template-columns: 1fr; /* Single column layout for popular products */
+        padding: 0 10px; /* Reduce padding */
+    }
+
+    .footer-container {
+        flex-direction: column; /* Stack footer columns vertically */
+        align-items: center;
+        padding: 0 10px; /* Add padding to footer container */
+    }
+
+    .footer-column {
+        min-width: unset;
+        width: 90%;
+        margin: 15px 0;
+    }
+
+    .quick-links ul {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* For screens smaller than 480px (mobile phones) */
+@media (max-width: 480px) {
+    .logo {
+        font-size: 16pt;
+    }
+
+    .items {
+        font-size: 14px;
+    }
+
+    .hero-content h1.sales {
+        font-size: 10vw; /* Further scale down heading */
+    }
+
+    .hero-content p.bio {
+        font-size: 4vw; /* Further scale down bio */
+    }
+
+    .hero-content button {
+        font-size: 3vw;
+        padding: 3vw 6vw;
+    }
+
+    .sec2 h2, .sec3 h2 {
+        font-size: 1.8em;
+    }
+
+    .site-footer {
+        padding: 20px 10px;
+        font-size: 10pt;
+    }
+}
